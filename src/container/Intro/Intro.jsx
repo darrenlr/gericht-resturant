@@ -5,9 +5,7 @@ import "./Intro.css";
 
 const Intro = () => {
 	const [playVideo, setPlayVideo] = useState(false);
-	const [videoClass, setVideoClass] = useState(
-		"app__video-overlay flex__center"
-	);
+	const [videoClass, setVideoClass] = useState("app__video-overlay");
 	const vidRef = React.useRef();
 
 	const handleVideo = () => {
@@ -23,7 +21,7 @@ const Intro = () => {
 	return (
 		<div
 			className="app__video"
-			onMouseEnter={() => setVideoClass("app__video-overlay flex__center")}
+			onMouseEnter={() => setVideoClass("app__video-overlay")}
 			onMouseLeave={() => setVideoClass("")}
 		>
 			<video
@@ -34,9 +32,9 @@ const Intro = () => {
 				controls={false}
 				muted
 			/>
-			<div className={videoClass}>
+			<div className={videoClass + " flex__center"}>
 				<div
-					className="app__video-overlay_circle flex__center"
+					className={videoClass + "_circle flex__center"}
 					onClick={handleVideo}
 				>
 					{playVideo ? (
